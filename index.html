@@ -82,176 +82,35 @@ layout: base
       <h3>All about Space</h3>
       <p class="fs-6">Explore all Space guides and resources.</p>
     </div>
+
     <div class="row mb-5 mb-sm-5">
+      {% for post in site.posts %}
       <div class="col-sm-6 col-lg-4 mb-3 mb-lg-5">
-        <!-- Card -->
-        <a class="card card-lg card-transition bg-primary-dark" href="#" style="min-height: 22rem;">
+        <a class="card card-lg card-transition bg-primary-dark" href="{{ post.url }}" style="min-height: 22rem;">
           <div class="card-body">
-            <div class="mb-3">
-              <span class="badge bg-soft-light">Data insights</span>
-            </div>
-            <h4 class="card-title text-white mb-5">State of product analytics report</h4>
-            <span class="card-link link-light">Learn more <i class="bi-chevron-right small ms-1"></i></span>
-            <div class="position-absolute bottom-0 start-0 end-0">
+            <ul class="meta list-inline mb-3">
+              <li class="list-inline-item badge bg-soft-light">
+                {% if post.lang == 'bn' %}
+                  {% assign date_parts = post.date | date: "%-d/%-m/%Y" | split: "/" %}
+                    {% include plugins/bengali-date.html %}
+                      {{ day }} {{ month }} {{ year }}
+                {% else %}
+                  {{ post.date | date: "%B %d, %Y" }}
+                {% endif %}
+              </li>
+              <li class="list-inline-item badge bg-soft-light">{{ post.categories }}</li>
+            </ul>
+            <h4 class="card-title text-white mb-5">{{ post.title | escape }}</h4>
+            {%- if site.show_excerpts -%}
+            <span class="card-link link-light">{{ post.content | strip_html | truncatewords: 50 }}</span>
+            {%- endif -%}
+           <div class="position-absolute bottom-0 start-0 end-0">
               <img class="card-img" src="https://htmlstream.com/space/assets/svg/components/shape-4-soft-light.svg" alt="Image Description">
             </div>
           </div>
         </a>
-        <!-- End Card -->
       </div>
-      <!-- End Col -->
-
-      <div class="col-sm-6 col-lg-4 mb-3 mb-lg-5">
-        <!-- Card -->
-        <a class="card card-lg card-transition bg-primary-dark" href="#" style="min-height: 22rem;">
-          <div class="card-body">
-            <div class="mb-3">
-              <span class="badge bg-soft-light">Ebooks &amp; reports</span>
-            </div>
-            <h4 class="card-title text-white mb-5">Space 2020 system architecture</h4>
-            <span class="card-link link-light">Learn more <i class="bi-chevron-right small ms-1"></i></span>
-            <div class="position-absolute bottom-0 start-0 end-0">
-              <img class="card-img" src="https://htmlstream.com/space/assets/svg/components/shape-5-soft-light.svg" alt="Image Description">
-            </div>
-          </div>
-        </a>
-        <!-- End Card -->
-      </div>
-      <!-- End Col -->
-
-      <div class="col-sm-6 col-lg-4 mb-3 mb-lg-5">
-        <a class="card card-lg card-transition bg-primary-dark" href="#" style="min-height: 22rem;">
-          <div class="card-body">
-            <div class="mb-3">
-              <span class="badge bg-soft-light">Ebooks &amp; reports</span>
-            </div>
-            <h4 class="card-title text-white mb-5">A guide to Space product materials</h4>
-            <span class="card-link link-light">Learn more <i class="bi-chevron-right small ms-1"></i></span>
-            <div class="position-absolute bottom-0 start-0 end-0">
-              <img class="card-img" src="https://htmlstream.com/space/assets/svg/components/shape-6-soft-light.svg" alt="Image Description">
-            </div>
-          </div>
-        </a>
-      </div>
+      {% endfor %}
     </div>
   </div>
-  <div class="position-absolute top-0 end-0">
-    <img src="https://htmlstream.com/space/assets/svg/components/shape-3-soft-light.svg" alt="SVG" width="500">
-  </div>
-  <div class="position-absolute bottom-0 end-0 me-10">
-    <img src="https://htmlstream.com/space/assets/svg/components/shape-1-soft-light.svg" alt="SVG" width="250">
-  </div>
-</div>
-
-
-
-<div class="home">
-  {%- if page.title -%}
-  <h1 class="page-heading">{{ page.title }}</h1>
-  {%- endif -%}
-
-  {% if site.paginate %}
-  {% assign posts = paginator.posts %}
-  {% else %}
-  {% assign posts = site.posts %}
-  {% endif %}
-
-  <div class="container">
-    <!-- include components/quotes.html -->
-    {%- include components/hero.quotes.html -%}
-    {%- if posts.size > 0 -%}
-    {%- if page.list_title -%}
-    <h2 class="post-list-heading">{{ page.list_title }}</h2>
-    {%- endif -%}
-      <div class="col-lg-8 m-auto">
-        <h2 class="text-center mb-50">Recent Posts</h2>
-      <div class="row">
-        {% for post in site.posts %}
-        <div class="col-md-12 col-sm-6">
-          <div class="post post-list">
-            <div class="thumb rounded" style="background-image: url('{%- if post.image -%} {{ post.image }} {% else %} {{site.og.image}} {%- endif -%}');">
-            </div>
-            <div class="details">
-              <ul class="meta list-inline mb-3">
-                <li class="list-inline-item">
-                  {% if post.lang == 'bn' %}
-                    {% assign date_parts = post.date | date: "%-d/%-m/%Y" | split: "/" %}
-                      {% include plugins/bengali-date.html %}
-                        {{ day }} {{ month }} {{ year }}
-                  {% else %}
-                    {{ post.date | date: "%B %d, %Y" }}
-                  {% endif %}
-                </li>
-                <li class="list-inline-item">{{ post.categories }}</li>
-              </ul>
-              <h5 class="post-title"><a href="{{ post.url }}">{{ post.title | escape }}</a></h5>
-              {%- if site.show_excerpts -%}
-              <p class="excerpt mb-0">{{ post.content | strip_html | truncatewords: 50 }}</p>
-              {%- endif -%}
-              <div class="post-bottom d-flex align-items-center">
-                <div class="social-share me-auto">
-                  <ul class="icons list-unstyled list-inline mb-0">
-                    <li class="list-inline-item"><a class="social-share-link social-share-facebook"
-                        href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ post.url }}" target="_blank"
-                        rel="noopener">
-                        <i class="fab fa-facebook-f"></i>
-                      </a></li>
-                    <li class="list-inline-item"><a class="social-share-link social-share-twitter"
-                        href="https://twitter.com/intent/tweet?url={{ site.url }}{{ post.url }}&text={{ post.title }}"
-                        target="_blank" rel="noopener">
-                        <i class="fab fa-twitter"></i>
-                      </a>
-                    </li>
-                    <li class="list-inline-item"><a class="social-share-link social-share-linkedin"
-                        href="https://www.linkedin.com/sharing/share-offsite/?url={{ site.url }}{{ post.url }}"
-                        target="_blank" rel="noopener">
-                        <i class="fab fa-linkedin-in"></i>
-                      </a>
-                    </li>
-                    <li class="list-inline-item"><a class="social-share-link social-share-pinterest"
-                        href="https://www.pinterest.com/pin/create/button/?url={{ site.url }}{{ post.url }}&media={{ post.image }}&description={{ post.title }}"
-                        target="_blank" rel="noopener">
-                        <i class="fab fa-pinterest-p"></i>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        {% endfor %}
-      </div>
-    </div>
-
-    
-  </div>
-
-  {% if site.paginate %}
-  <div class="pager">
-    <ul class="pagination">
-      {%- if paginator.previous_page %}
-      <li><a href="{{ paginator.previous_page_path | relative_url }}" class="previous-page">{{ paginator.previous_page
-          }}</a></li>
-      {%- else %}
-      <li>
-        <div class="pager-edge">•</div>
-      </li>
-      {%- endif %}
-      <li>
-        <div class="current-page">{{ paginator.page }}</div>
-      </li>
-      {%- if paginator.next_page %}
-      <li><a href="{{ paginator.next_page_path | relative_url }}" class="next-page">{{ paginator.next_page }}</a></li>
-      {%- else %}
-      <li>
-        <div class="pager-edge">•</div>
-      </li>
-      {%- endif %}
-    </ul>
-  </div>
-  {%- endif %}
-
-  {%- endif -%}
-
 </div>
