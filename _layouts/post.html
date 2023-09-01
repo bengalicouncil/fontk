@@ -112,8 +112,8 @@ layout: base
   </div>
 </div>
 
-<div class="container content-space-1 content-space-md-3">
-  {%- if site.disqus.shortname -%}
+{%- if site.disqus.shortname -%}
+  <div class="container content-space-1 content-space-md-3">
   {%- include disqus_comments.html -%}
-  {%- endif -%}
-</div>
+  </div>
+{%- endif -%}
