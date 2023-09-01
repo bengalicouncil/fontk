@@ -74,38 +74,41 @@ layout: base
     </div>
     <div class="border-top border-white-10 my-10"></div>
     
-    <div class="container content-space-2">
-    <div class="w-lg-65 text-center mx-lg-auto mb-7">
-      <h3>All about Space</h3>
-      <p class="fs-6">Explore all Space guides and resources.</p>
-    </div>
-      <div class="row mb-5 mb-sm-5">
-      {% for post in site.posts %}
-        <a class="col-sm-6 col-lg-4 mb-3 mb-lg-5 card card-lg card-transition bg-primary-dark" href="{{ post.url }}" style="min-height: 22rem;">
-          <div class="card-body">
-            <ul class="meta list-inline mb-3">
-              <li class="list-inline-item badge bg-soft-light">
-                {% if post.lang == 'bn' %}
-                  {% assign date_parts = post.date | date: "%-d/%-m/%Y" | split: "/" %}
-                    {% include plugins/bengali-date.html %}
-                      {{ day }} {{ month }} {{ year }}
-                {% else %}
-                  {{ post.date | date: "%B %d, %Y" }}
-                {% endif %}
-              </li>
-              <li class="list-inline-item badge bg-soft-light">{{ post.categories }}</li>
-            </ul>
-            <h4 class="card-title text-white mb-5">{{ post.title | escape }}</h4>
-            {%- if site.show_excerpts -%}
-            <span class="card-link link-light">{{ post.content | strip_html | truncatewords: 50 }}</span>
-            {%- endif -%}
-           <div class="position-absolute bottom-0 start-0 end-0">
-              <img class="card-img" src="https://htmlstream.com/space/assets/svg/components/shape-4-soft-light.svg" alt="Image Description">
-            </div>
+    
+  </div>
+</div>
+<div class="bg-primary position-relative overflow-hidden">
+  <div class="container content-space-2">
+  <div class="w-lg-65 text-center mx-lg-auto mb-7">
+    <h3>All about BNC</h3>
+    <p class="fs-6">Explore all Space guides and resources.</p>
+  </div>
+    <div class="row mb-5 mb-sm-5">
+    {% for post in site.posts %}
+      <a class="col-sm-6 col-lg-4 mb-3 mb-lg-5 card card-lg card-transition bg-primary-dark" href="{{ post.url }}" style="min-height: 22rem;">
+        <div class="card-body">
+          <ul class="meta list-inline mb-3">
+            <li class="list-inline-item badge bg-soft-light">
+              {% if post.lang == 'bn' %}
+                {% assign date_parts = post.date | date: "%-d/%-m/%Y" | split: "/" %}
+                  {% include plugins/bengali-date.html %}
+                    {{ day }} {{ month }} {{ year }}
+              {% else %}
+                {{ post.date | date: "%B %d, %Y" }}
+              {% endif %}
+            </li>
+            <li class="list-inline-item badge bg-soft-light">{{ post.categories }}</li>
+          </ul>
+          <h4 class="card-title text-white mb-5">{{ post.title | escape }}</h4>
+          {%- if site.show_excerpts -%}
+          <span class="card-link link-light">{{ post.content | strip_html | truncatewords: 50 }}</span>
+          {%- endif -%}
+         <div class="position-absolute bottom-0 start-0 end-0">
+            <img class="card-img" src="https://htmlstream.com/space/assets/svg/components/shape-4-soft-light.svg" alt="Image Description">
           </div>
-        </a>
-      {% endfor %}
-    </div>
-    </div>
+        </div>
+      </a>
+    {% endfor %}
+  </div>
   </div>
 </div>
