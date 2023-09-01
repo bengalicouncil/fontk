@@ -4930,13 +4930,6 @@ fieldset:disabled .btn {
     justify-content: space-between
 }
 
-.navbar-brand {
-    padding-top: .40625rem;
-    padding-bottom: .40625rem;
-    margin-right: 1rem;
-    font-size: 1.125rem;
-    white-space: nowrap
-}
 
 .navbar-nav {
     display: -ms-flexbox;
@@ -5448,14 +5441,6 @@ fieldset:disabled .btn {
     overflow-y: visible
 }
 
-.navbar-light .navbar-brand {
-    color: #51596c
-}
-
-.navbar-light .navbar-brand:focus,
-.navbar-light .navbar-brand:hover {
-    color: rgba(0, 0, 0, .9)
-}
 
 .navbar-light .navbar-nav .nav-link {
     color: #51596c
@@ -5494,14 +5479,7 @@ fieldset:disabled .btn {
     color: rgba(0, 0, 0, .9)
 }
 
-.navbar-dark .navbar-brand {
-    color: #fff
-}
 
-.navbar-dark .navbar-brand:focus,
-.navbar-dark .navbar-brand:hover {
-    color: #fff
-}
 
 .navbar-dark .navbar-nav .nav-link {
     color: rgba(255, 255, 255, .55)
@@ -21085,29 +21063,9 @@ input[type=number] {
 }
 
 .navbar-brand {
-    padding-top: 0;
-    padding-bottom: 0
+    font-size: 25px;
+    font-weight: bold;
 }
-
-.navbar-brand-logo {
-    width: 100%;
-    min-width: 8.5rem;
-    max-width: 8.5rem
-}
-
-.navbar-brand-collapsed,
-.navbar-brand-on-scroll {
-    display: none
-}
-
-.navbar-scrolled .navbar-brand-default {
-    display: none
-}
-
-.navbar-scrolled .navbar-brand-on-scroll {
-    display: inline-block
-}
-
 .navbar-nav-wrap {
     display: -ms-flexbox;
     display: flex;
