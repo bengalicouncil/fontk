@@ -6,6 +6,7 @@ layout: base
     border: 0;
     border-bottom: 0px solid rgba(0, 0, 0, 0.1) !important;
   }
+
   #bc-glyph-preview button {
     align-items: center;
     background-color: transparent;
@@ -20,6 +21,7 @@ layout: base
     position: relative;
     outline: 1px solid #dadce0;
   }
+
   #bc-glyph-preview .glyph-grid-list {
     list-style-type: none;
     display: grid;
@@ -28,7 +30,7 @@ layout: base
     padding: 0 1px 1px;
   }
 </style>
-<section class="bg-primary-dark navbar navbar-expand-lg flex-wrap shadow-none">
+<section class="bg-primary-dark">
   <div class="container-fluid text-center p-2">
     <div class="container d-flex justify-content-center">
       <h1 class="text-white">{{ page.font_en }} </h1>
@@ -50,47 +52,6 @@ layout: base
   </div>
 </section>
 
-<section class="container" id="bc-font-details">
-  <h3 class="m-3 fw-bold">Details</h3>
-  <div class="row px-md-5">
-    <div class="col-sm-12 col-md-6">
-    <table class="table">
-      <tbody>
-        <tr><td>Author</td><td>Codepotro</td></tr>
-        <tr><td>Idea</td><td></td></tr>
-        <tr><td>Design</td><td></td></tr>
-        <tr><td>Publisher</td><td></td></tr>
-        <tr><td>Licence</td><td></td></tr>
-        <tr><td>Price</td><td></td></tr>
-        <tr><td>Free/Premium</td><td></td></tr>
-        <tr><td>Download/Buy Link</td><td></td></tr>
-        <tr><td>Webfont</td><td></td></tr>
-        <tr><td>Encodings</td><td>Ansi V1/Ansiv2/Unicode/Both/Others</td></tr>
-        <tr><td>Version</td><td>0.990</td></tr>
-        <tr><td>Languages</td><td></td></tr>
-      </tbody>
-    </table>
-  </div>
-  <div class="col-sm-12 col-md-6">
-    <table class="table">
-      <tbody>
-        
-        <tr><td>Glyphs</td><td>(45/67)</td></tr>
-        <tr><td>Ipa Support</td><td></td></tr>
-        <tr><td>Omr Support</td><td></td></tr>
-        <tr><td>Listing Support</td><td></td></tr>
-        <tr><td>Encoding</td><td></td></tr>
-        <tr><td>Styles</td><td>Bold/Italic</td></tr>
-        <tr><td>Type</td><td>Serif, Sans Serif, Calligraphy, Typewrite, Artistic, Old Classical</td></tr>
-        <tr><td>Data-verified By</td><td></td></tr>
-        <tr><td>UID</td><td>BN-00-12-13054</td></tr>
-      </tbody>
-    </table>
-  </div>
-  </div>
-  
-</section>
-
 <section class="pt-5 bg-white" id="bc-font-styles">
   <div class="container rounded-lg py-3 my-3 ">
     <h3 class="m-3 text-start fw-bold">Styles</h3>
@@ -102,7 +63,7 @@ layout: base
               <div class="col-md-12">
                 <div class="row  input-group mb-0  my-0 font-input">
                   <div class="col-9 p-2 px-5 ">
-                    <input type="text" class="nav-like font-text-preview rounded-holder p-3 w-100" placeholder="এখানে লিখুন">
+                    <input type="text" class="form-control font-text-preview form-input" placeholder="এখানে লিখুন...">
                   </div>
                   <div class="col-3 p-2 ">
                     <div class="range">
@@ -115,17 +76,17 @@ layout: base
                   <h5 class="grey-text">Normal</h5>
                   <div class="form-group pb-5 ">
                     <input id="fontpreview" class="w-100 h-100 bc-font-dynamic"
-                      value="আমার সোনার বাংলা আমি তোমায় ভালোবাসি" style="font-size: 46.2px;">
+                      value="আমার সোনার বাংলা আমি তোমায় ভালোবাসি, চিরদিন তোমার আকাশ তোমার বাতাস.." style="font-size: 46.2px;">
                   </div>
                   <h5 class="grey-text ">Bold (Generated)</h5>
                   <div class="form-group pb-5">
                     <input id="fontpreview" class="w-100 h-100 fw-bold bc-font-dynamic"
-                      value="আমার সোনার বাংলা আমি তোমায় ভালোবাসি" style="font-size: 46.2px;">
+                      value="আমার সোনার বাংলা আমি তোমায় ভালোবাসি, চিরদিন তোমার আকাশ তোমার বাতাস.." style="font-size: 46.2px;">
                   </div>
                   <h5 class="grey-text">Italic (Generated)</h5>
                   <div class="form-group pb-5 ">
                     <input id="fontpreview" class="w-100 h-100 font-italic bc-font-dynamic"
-                      value="আমার সোনার বাংলা আমি তোমায় ভালোবাসি" style="font-size: 46.2px;">
+                      value="আমার সোনার বাংলা আমি তোমায় ভালোবাসি, চিরদিন তোমার আকাশ তোমার বাতাস.." style="font-size: 46.2px;">
                   </div>
                 </div>
               </div>
@@ -245,10 +206,75 @@ layout: base
   </div>
 </section>
 
+<section class="container" id="bc-font-details">
+  <h3 class="m-3 fw-bold">Details</h3>
+  <div class="row px-md-5">
+    <div class="col-sm-12 col-md-6">
+    <table class="table">
+      <tbody>
+        <tr><td>Author</td><td>Codepotro</td></tr>
+        <tr><td>Idea</td><td></td></tr>
+        <tr><td>Design</td><td></td></tr>
+        <tr><td>Publisher</td><td></td></tr>
+        <tr><td>Licence</td><td></td></tr>
+        <tr><td>Price</td><td></td></tr>
+        <tr><td>Free/Premium</td><td></td></tr>
+        <tr><td>Download/Buy Link</td><td></td></tr>
+        <tr><td>Webfont</td><td></td></tr>
+        <tr><td>Encodings</td><td>Ansi V1/Ansiv2/Unicode/Both/Others</td></tr>
+        <tr><td>Version</td><td>0.990</td></tr>
+        <tr><td>Languages</td><td></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-sm-12 col-md-6">
+    <table class="table">
+      <tbody>
+        
+        <tr><td>Glyphs</td><td>(45/67)</td></tr>
+        <tr><td>Ipa Support</td><td></td></tr>
+        <tr><td>Omr Support</td><td></td></tr>
+        <tr><td>Listing Support</td><td></td></tr>
+        <tr><td>Encoding</td><td></td></tr>
+        <tr><td>Styles</td><td>Bold/Italic</td></tr>
+        <tr><td>Type</td><td>Serif, Sans Serif, Calligraphy, Typewrite, Artistic, Old Classical</td></tr>
+        <tr><td>Data-verified By</td><td></td></tr>
+        <tr><td>UID</td><td>BN-00-12-13054</td></tr>
+      </tbody>
+    </table>
+  </div>
+  </div>
+  
+</section>
 <script>
   jQuery(function ($) {
     $('#bc-glyph-preview button').mouseover(function () {
       $('.bc-font-preview-extended').find('bcf').text($(this).text());
     });
   });
+</script>
+<script>
+jQuery(function ($) {
+ $('.font-prev-dedicated').find('input').css('font-size', "30px");
+    var defText = "আমার সোনার বাংলা আমি তোমায় ভালোবাসি";
+
+    $('.font-prev-dedicated').each(function () {
+        $(this).find('input').attr('value', defText);
+    });
+
+    $('.font-text-preview').on('input', function () {
+        defText = $(this).val();
+        $('.font-prev-dedicated').each(function () {
+            var ftype = $(this).find('input');
+            $(this).find('input').attr('value', defText);
+        });
+    });
+
+
+    $('.font-text-size').on('input', function () {
+        var size = $(this).val() + "px";
+        $('.font-prev-dedicated').find('input').css('font-size', size);
+    });
+
+});
 </script>
