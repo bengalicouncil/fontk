@@ -162,7 +162,7 @@ layout: base
           <button role="option">ঁ</button>
         </div>
       </div>
-      <div class="col d-none  d-xl-block cp-font-preview-extended d-flex justify-content-center text-center">
+      <div class="col d-none d-xl-block bc-font-preview-extended d-flex justify-content-center text-center">
         <cpgp>ঁ</cpgp>
       </div>
     </div>
@@ -171,38 +171,8 @@ layout: base
 
 <script>
   jQuery(function($) {
-    $('.list-font-item-text').find('textprev').css('font-size', "24px");
-
-    var defText = "নিশ্চয়ই সকল কাজ নিয়্যতের উপর নির্ভরশীল। আর নিশ্চয়ই প্রত্যেক ব্যক্তি নিয়ত অনুযায়ী প্রতিফল পাবে।";
-    $('.list-font-item-text').each(function() {
-      var ftype = $(this).find('textprev').attr('data-ftype');
-      $(this).find('textprev').text(defText);
-    });
-
-    $('.font-text-preview').on('input', function() {
-      defText = $(this).val();
-      $('.list-font-item-text').each(function() {
-        var ftype = $(this).find('textprev').attr('data-ftype');
-        $(this).find('textprev').text(defText);
+      $('#bc-glyph-preview button').mouseover(function() {
+          $('.bc-font-preview-extended').find('cpgp').text($(this).text());
       });
-
-    });
-    $('.font-text-size').on('input', function() {
-      var size = $(this).val() + "px";
-
-      $('.list-font-item-text').find('textprev').css('font-size', size);
-    });
-
-    $(document).ready(function() {
-      $('#list').click(function(event) {
-        event.preventDefault();
-        $('#products .item').removeClass('col-lg-4');
-      });
-      $('#grid').click(function(event) {
-        event.preventDefault();
-        $('#products .item').addClass('col-lg-4');
-
-      });
-    });
   });
 </script>
