@@ -24,13 +24,13 @@ layout: base
     padding: 0 1px 1px;
 }
 </style>
-<div class="navbar navbar-expand-lg flex-wrap cp-fixed-nav-pad top-nav-collapse cp-uni-light shadow-none">
+<div class="navbar navbar-expand-lg flex-wrap top-nav-collapse shadow-none">
   <div class="container-fluid text-center p-2">
     <div class="container d-flex justify-content-center">
-      <h1 class="cp-glyph-heading-font fw-light wow fadeInLeft">{{ page.font.en }} </h1>
+      <h1 class="fw-light wow fadeInLeft">{{ page.font_en }} </h1>
       <ul class="navbar-nav ms-auto fw-bold d-none d-lg-flex justify-content-center align-items-center">
-        <li class="nav-item "><a class="nav-link  waves-effect waves-light" href="#cp-char-preview">প্রাকদর্শন</a></li>
-        <li class="nav-item "><a class="nav-link  waves-effect waves-light" href="#font-details">ডাউনলোড</a></li>
+        <li class="nav-item"><a class="nav-link" href="#bc-glyph-preview">প্রাকদর্শন</a></li>
+        <li class="nav-item"><a class="nav-link" href="#bc-font-details">ডাউনলোড</a></li>
       </ul>
     </div>
   </div>
@@ -40,8 +40,8 @@ layout: base
   <div class="container d-flex justify-content-center align-items-center p-5">
     <div class="col-12  col-lg-3 col-xl-3 d-md-block h-100">{{ content }}</div>
     <div
-      class="col d-none d-sm-none d-md-block cp-font-preview-extended d-flex justify-content-center text-center h-100">
-      <h4 class="cp-glyph-heading-font fw-bolder">{{ page.font.bn }}</h4>
+      class="col d-none d-sm-none d-md-block d-flex justify-content-center text-center h-100">
+      <h4 class="bc-font-dynamic fw-bolder">{{ page.font_bn }}</h4>
       <h6 class="p-5">(শিরোনাম প্রাকদর্শন)</h6>
     </div>
   </div>
@@ -58,8 +58,7 @@ layout: base
               <div class="col-md-12">
                 <div class="row  input-group mb-0  my-0 font-input">
                   <div class="col-9 p-2 px-5 ">
-                    <input type="text" class="cp-font-text nav-like font-text-preview rounded-holder p-3 w-100"
-                      placeholder="এখানে লিখুন">
+                    <input type="text" class="nav-like font-text-preview rounded-holder p-3 w-100" placeholder="এখানে লিখুন">
                   </div>
                   <div class="col-3 p-2 ">
                     <div class="range">
@@ -71,17 +70,17 @@ layout: base
                 <div class="row font-prev-dedicated font-input">
                   <h5 class="grey-text">Normal</h5>
                   <div class="form-group pb-5 ">
-                    <input id="fontpreview" class="w-100 h-100" value="আমার সোনার বাংলা আমি তোমায় ভালোবাসি"
+                    <input id="fontpreview" class="w-100 h-100 bc-font-dynamic" value="আমার সোনার বাংলা আমি তোমায় ভালোবাসি"
                       style="font-size: 46.2px;">
                   </div>
                   <h5 class="grey-text ">Bold (Generated)</h5>
                   <div class="form-group pb-5">
-                    <input id="fontpreview" class="w-100 h-100 fw-bold" value="আমার সোনার বাংলা আমি তোমায় ভালোবাসি"
+                    <input id="fontpreview" class="w-100 h-100 fw-bold bc-font-dynamic" value="আমার সোনার বাংলা আমি তোমায় ভালোবাসি"
                       style="font-size: 46.2px;">
                   </div>
                   <h5 class="grey-text">Italic (Generated)</h5>
                   <div class="form-group pb-5 ">
-                    <input id="fontpreview" class="w-100 h-100 font-italic" value="আমার সোনার বাংলা আমি তোমায় ভালোবাসি"
+                    <input id="fontpreview" class="w-100 h-100 font-italic bc-font-dynamic" value="আমার সোনার বাংলা আমি তোমায় ভালোবাসি"
                       style="font-size: 46.2px;">
                   </div>
                 </div>
@@ -94,7 +93,7 @@ layout: base
   </div>
 </section>
 
-<section id="bc-glyph-preview">
+<section id="bc-glyph-preview" class="bc-font-dynamic">
   <div class="container">
     <h2 class="black-text-2 m-3 text-start fw-bold">Glyph Preview</h2>
     <div class="d-flex justify-content-center align-items-center p-5">
@@ -163,7 +162,7 @@ layout: base
         </div>
       </div>
       <div class="col d-none d-xl-block bc-font-preview-extended d-flex justify-content-center text-center">
-        <cpgp>ঁ</cpgp>
+        <bcf style="font-size: 10rem;">ঁ</bcf>
       </div>
     </div>
   </div>
@@ -172,7 +171,7 @@ layout: base
 <script>
   jQuery(function($) {
       $('#bc-glyph-preview button').mouseover(function() {
-          $('.bc-font-preview-extended').find('cpgp').text($(this).text());
+          $('.bc-font-preview-extended').find('bcf').text($(this).text());
       });
   });
 </script>
