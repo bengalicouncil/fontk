@@ -1,6 +1,29 @@
 ---
 layout: base
 ---
+<style>
+  #bc-glyph-preview button {
+    align-items: center;
+    background-color: transparent;
+    border: 0;
+    color: #313236;
+    font: inherit;
+    font-size: 26px;
+    height: 60px;
+    justify-content: center;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    outline: 1px solid #dadce0;
+}
+#bc-glyph-preview .glyph-grid-list {
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+    gap: 1px;
+    padding: 0 1px 1px;
+}
+</style>
 <div class="navbar navbar-expand-lg flex-wrap cp-fixed-nav-pad top-nav-collapse cp-uni-light shadow-none">
   <div class="container-fluid text-center p-2">
     <div class="container d-flex justify-content-center">
@@ -145,3 +168,41 @@ layout: base
     </div>
   </div>
 </section>
+
+<script>
+  jQuery(function($) {
+    $('.list-font-item-text').find('textprev').css('font-size', "24px");
+
+    var defText = "নিশ্চয়ই সকল কাজ নিয়্যতের উপর নির্ভরশীল। আর নিশ্চয়ই প্রত্যেক ব্যক্তি নিয়ত অনুযায়ী প্রতিফল পাবে।";
+    $('.list-font-item-text').each(function() {
+      var ftype = $(this).find('textprev').attr('data-ftype');
+      $(this).find('textprev').text(defText);
+    });
+
+    $('.font-text-preview').on('input', function() {
+      defText = $(this).val();
+      $('.list-font-item-text').each(function() {
+        var ftype = $(this).find('textprev').attr('data-ftype');
+        $(this).find('textprev').text(defText);
+      });
+
+    });
+    $('.font-text-size').on('input', function() {
+      var size = $(this).val() + "px";
+
+      $('.list-font-item-text').find('textprev').css('font-size', size);
+    });
+
+    $(document).ready(function() {
+      $('#list').click(function(event) {
+        event.preventDefault();
+        $('#products .item').removeClass('col-lg-4');
+      });
+      $('#grid').click(function(event) {
+        event.preventDefault();
+        $('#products .item').addClass('col-lg-4');
+
+      });
+    });
+  });
+</script>
